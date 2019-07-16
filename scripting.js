@@ -5,4 +5,3 @@ var a = React.createElement(
 );
 
 ReactDOM.render(a, document.getElementById("notearea"));
-console.log("cool");
