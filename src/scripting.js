@@ -5,10 +5,40 @@ class ScrollText extends React.Component {
         this.state = {reader: new reader()};
     }
 
+    componentDidMount(){
+        const submit = document.getElementById("submitter");
+
+        submit.addEventListener(
+            "click",
+            () => this.update()
+        )
+    }
+
+    componentWillUnmount(){
+        return null;
+    }
+
+    update(){
+        this.setState({
+            reader: new reader()
+        });
+    }
+
     render(){
-        const a = <h1> no </h1>;
-        const b = <h2> yes {this.state.reader.posts[0][1]} </h2>;
-        return [a, b].reverse();
+        let post;
+        const renderedposts = [];
+
+        for (post of this.state.reader.posts){
+            let html = (
+                <div className="post">
+                    <div className="time">{post[0]}</div>
+                    <div className="note">{post[1]}</div>
+                </div>
+            )
+            renderedposts.push(html);
+        }
+
+        return renderedposts.reverse();
     }
 }
 
@@ -17,10 +47,11 @@ function reader(){
     this.log = JSON.parse(localStorage.getItem("log"));
     this.posts = [];
 
-    for (post of this.log){
-        this.posts.push(JSON.parse(localStorage.getItem(post)));
+    if (this.log !== null){
+        for (post of this.log){
+            this.posts.push(JSON.parse(localStorage.getItem(post)));
+        }
     }
-
 }
 
 ReactDOM.render(

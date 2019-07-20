@@ -39,7 +39,7 @@ you've got to write some first!`);
         throw new Error("write the text");
 
     } else {
-        let t = a();
+        let t = new a();
         let entry = [t, written];
         console.log(JSON.stringify(entry));
         localStorage.setItem(value, JSON.stringify(entry));
@@ -49,8 +49,7 @@ you've got to write some first!`);
 // gets the time the post was made
 function a() {
     let d = new Date();
-    let ttime = d.toISOString();
-    return ttime;
+    return d;
 }
 
 //creates the names of the posts

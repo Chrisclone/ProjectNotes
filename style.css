@@ -1,3 +1,35 @@
+* {
+    text-align: center;
+    font-family: Segoe UI, Arial;
+}
+html {
+    background-color: #fff3c4;
+}
+
 textarea {
-  display:block;
+    margin: 25px auto 25px auto;
+    display:block;
+    border:none;
+    color:white;
+    background-color: #333127;
+}
+
+button {
+    height:8vh;
+    width: 18vh;
+    border:none;
+    color:white;
+    background-color: #333127;
+}
+
+.time, .note {
+    background-color: #ded9c3;
+    padding:3px;
+    margin: 3px auto 3px auto;
+    width: 50vw;
+}
+
+@media (max-width:600px){
+    .time, .note {
+        width: 90vw;
 }

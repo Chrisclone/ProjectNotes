@@ -33,7 +33,7 @@ function textStore(value, written) {
 
         throw new Error("write the text");
     } else {
-        var t = a();
+        var t = new a();
         var entry = [t, written];
         console.log(JSON.stringify(entry));
         localStorage.setItem(value, JSON.stringify(entry));
@@ -43,8 +43,7 @@ function textStore(value, written) {
 // gets the time the post was made
 function a() {
     var d = new Date();
-    var ttime = d.toISOString();
-    return ttime;
+    return d;
 }
 
 //creates the names of the posts
