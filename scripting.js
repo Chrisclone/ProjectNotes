@@ -24,8 +24,11 @@ var ScrollText = function (_React$Component) {
             var _this2 = this;
 
             var submit = document.getElementById("submitter");
-
+            var remove = document.getElementById("reset");
             submit.addEventListener("click", function () {
+                return _this2.update();
+            });
+            remove.addEventListener("click", function () {
                 return _this2.update();
             });
         }

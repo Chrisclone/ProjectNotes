@@ -12,6 +12,7 @@ textarea {
     border:none;
     color:white;
     background-color: #333127;
+    resize:none;
 }
 
 button {

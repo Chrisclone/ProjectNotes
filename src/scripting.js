@@ -7,8 +7,12 @@ class ScrollText extends React.Component {
 
     componentDidMount(){
         const submit = document.getElementById("submitter");
-
+        const remove = document.getElementById("reset");
         submit.addEventListener(
+            "click",
+            () => this.update()
+        )
+        remove.addEventListener(
             "click",
             () => this.update()
         )
